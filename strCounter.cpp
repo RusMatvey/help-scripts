@@ -10,7 +10,7 @@ struct Char{
 };
 
 vector<Char> alf = { {'A', 1}, {'M', 0}, {'F', 0}, {'I', 1}, {'B', 0}, {'R', 0}, {'A', 2}, {'X', 0}, {'I', 2}, {'i', 0} };
-vector<Char> dbug = { {'I', 1}, {'A', 1}, {'M', 0}, {'F', 0}, {'B', 0}, {'R', 0}, {'A', 2}, {'X', 0}, {'I', 2}, {'i', 0} };
+vector<Char> dbug = { {'I', 1}, {'A', 1}, {'I', 2}, {'A', 2}, {'M', 0}, {'F', 0}, {'B', 0}, {'R', 0}, {'X', 0}, {'i', 0} };
 
 int check(vector<Char> a){
     /*if(a[7] != '0' && a[7] != '5'){
@@ -23,7 +23,7 @@ int check(vector<Char> a){
     
     for(int i = 0; i < a.size(); ++i){
         for(int t = i + 1; t < a.size(); ++t){
-            if(a[i].type > a[t].type && a[t].type > 0){
+            if(a[i].in == a[t].in && a[i].type > a[t].type && a[t].type > 0){
                 return 0;
             }
         }
@@ -81,6 +81,8 @@ int permut(){
         
         n_i:;
     }
+    
+    return res;
 }
 
 int silly(){
